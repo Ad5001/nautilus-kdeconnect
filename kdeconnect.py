@@ -19,6 +19,6 @@ def get_available_devices():
     devices.pop()
     for device in devices:
         device_name=re.search("(?<=-\s).+(?=:\s)", device).group(0)
-        device_id=re.search("(?<=:\s)[a-z0-9]+(?=\s\()", device).group(0).strip()
+        device_id=re.search("((\w|\d)+)(?=\s\()", device).group(0).strip()
         devices_a.append({ "name": device_name, "id": device_id })
     return devices_a

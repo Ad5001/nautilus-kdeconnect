@@ -38,7 +38,7 @@ class KDEConnectExtension(GObject.GObject, Nautilus.MenuProvider):
         try:
             devices = get_available_devices()
         except Exception as e:
-            raise Exception("Failed to get available devices")
+            raise Exception("Failed to get available devices: " + e.message)
 
         files_new = []
         folder_list = []
